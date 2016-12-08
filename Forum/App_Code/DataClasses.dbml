@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Forum" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=WIN-N4LTN1FOFQH\SQLEXPRESS;Initial Catalog=Forum;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ForumConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BBSCategory" Member="BBSCategory">
+    <Type Name="BBSCategory">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryDes" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="BBSCategory_BBSInfo" Member="BBSInfo" ThisKey="CategoryID" OtherKey="CategoryID" Type="BBSInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BBSInfo" Member="BBSInfo">
+    <Type Name="BBSInfo">
+      <Column Name="InfoID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PostName" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReplyCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastReplytime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PostUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BBSCategory_BBSInfo" Member="BBSCategory" ThisKey="CategoryID" OtherKey="CategoryID" Type="BBSCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
