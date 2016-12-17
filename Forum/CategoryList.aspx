@@ -12,9 +12,22 @@
     <div>
     
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="LinqDataSource1">
+            <HeaderTemplate>
+                <table border="0">
+            </HeaderTemplate>
+            <ItemTemplate>
+                <tr><td><a href=""><%# Eval("categoryname") %></a></td></tr>
+                <tr><td><%#Eval("categorydes") %></td></tr>
+            </ItemTemplate>
+            <FooterTemplate>
+                </table>
+            </FooterTemplate>
         </asp:Repeater>
-        <asp:LinqDataSource ID="LinqDataSource1" runat="server" EntityTypeName="">
+        <asp:LinqDataSource ID="LinqDataSource1" runat="server" EntityTypeName="" ContextTypeName="BBSCategory" TableName="BBSInfo">
         </asp:LinqDataSource>
+    
+        <br />
+        <br />
     
     </div>
     </form>
