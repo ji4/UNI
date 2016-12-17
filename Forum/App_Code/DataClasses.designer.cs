@@ -234,7 +234,7 @@ public partial class BBSInfo : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _FileName;
 	
-	private System.Nullable<System.DateTime> _PostName;
+	private System.Nullable<System.DateTime> _PostTime;
 	
 	private System.Nullable<int> _ReplyCount;
 	
@@ -256,8 +256,8 @@ public partial class BBSInfo : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnTitleChanged();
     partial void OnFileNameChanging(string value);
     partial void OnFileNameChanged();
-    partial void OnPostNameChanging(System.Nullable<System.DateTime> value);
-    partial void OnPostNameChanged();
+    partial void OnPostTimeChanging(System.Nullable<System.DateTime> value);
+    partial void OnPostTimeChanged();
     partial void OnReplyCountChanging(System.Nullable<int> value);
     partial void OnReplyCountChanged();
     partial void OnLastReplytimeChanging(System.Nullable<System.DateTime> value);
@@ -334,22 +334,22 @@ public partial class BBSInfo : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostName", DbType="DateTime")]
-	public System.Nullable<System.DateTime> PostName
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostTime", DbType="DateTime")]
+	public System.Nullable<System.DateTime> PostTime
 	{
 		get
 		{
-			return this._PostName;
+			return this._PostTime;
 		}
 		set
 		{
-			if ((this._PostName != value))
+			if ((this._PostTime != value))
 			{
-				this.OnPostNameChanging(value);
+				this.OnPostTimeChanging(value);
 				this.SendPropertyChanging();
-				this._PostName = value;
-				this.SendPropertyChanged("PostName");
-				this.OnPostNameChanged();
+				this._PostTime = value;
+				this.SendPropertyChanged("PostTime");
+				this.OnPostTimeChanged();
 			}
 		}
 	}

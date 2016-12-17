@@ -13,7 +13,7 @@
       <Column Name="InfoID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="FileName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="PostName" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PostTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ReplyCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LastReplytime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="PostUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />

@@ -23,7 +23,7 @@
                 </table>
             </FooterTemplate>
         </asp:Repeater>
-        <asp:LinqDataSource ID="LinqDataSource1" runat="server" EntityTypeName="" ContextTypeName="BBSCategory" TableName="BBSInfo">
+        <asp:LinqDataSource ID="LinqDataSource1" runat="server" EntityTypeName="" ContextTypeName="DataClassesDataContext" TableName="BBSCategory">
         </asp:LinqDataSource>
     
         <br />
