@@ -16,7 +16,7 @@
                 <table border="0">
             </HeaderTemplate>
             <ItemTemplate>
-                <tr><td><a href=""><%# Eval("categoryname") %></a></td></tr>
+                <tr><td><a href="MsgList.aspx?categoryid=<%# Eval("categoryid") %>"><%# Eval("categoryname") %></a></td></tr>
                 <tr><td><%#Eval("categorydes") %></td></tr>
             </ItemTemplate>
             <FooterTemplate>
