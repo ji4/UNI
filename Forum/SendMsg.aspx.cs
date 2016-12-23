@@ -19,27 +19,19 @@ public partial class SendMsg : System.Web.UI.Page
     /// <param name=""replycount>回覆數</param>
     /// <param name="user"></param>
     /// <param name="categoryid">類別ID</param>
-    public void AddMsg(string title, string user, int categoryid)
+    
+
+    protected void btnPublishArticle_Click(object sender, EventArgs e)
     {
-        //建立資料內文物件
-        DataClassesDataContext db = new DataClassesDataContext();
-        //建立新的論壇物件
-        BBSInfo myinfo = new BBSInfo
-        {
-            Title = title,
-            FileName = getFilename().ToString(),
-            PostTime = DateTime.Now.Date,
-            ReplyCount = 0,
-            LastReplytime = DateTime.Now.Date,
-            PostUser = user,
-            CategoryID = categoryid
-
-        };
-        xmlfilename = myinfo.FileName;
-        //添加論壇物件到資料內文
-        db.BBSInfo.InsertOnSubmit((myinfo));
-        //提交易動
-        db.SubmitChanges();
-
+        BBSManager mybbs = new BBSManager();
+        //抓取當前用戶名稱
+        string username = HttpContext.Current.User.Identity.Name;
+        //添加訊息到資料庫
+        mybbs.AddMsg(TextBox1.Text, username, int.Parse(Request.QueryString["categoryid"]));
+        //詳細內容加到XML
+        mybbs.AddXML(Server.MapPath(",")+@"\content.xml",
+            TextBox1.Text, TextBox2.Text, username);
+        Literal1.Text = "文帖發布成功!";
+       
     }
 }
