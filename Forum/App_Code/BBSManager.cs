@@ -100,4 +100,21 @@ public class BBSManager
         db.SubmitChanges();
         return true;
     }
+
+    public void UpdateXML(string filename, string title, string content, string user)
+    {
+        //載入XML檔案
+        XElement myxml = XElement.Load(filename);
+        //建立新的XML元素, LINQ可一次產生元素的所有內容
+        XElement newxml = new XElement("xmlrecord",
+            new XElement("title", title),
+            new XElement("posttime", DateTime.Now.Date),
+            new XElement("content", content),
+            new XElement("ppstuser" ), user);
+        
+        //添加新元素到XML中
+        myxml.Add(newxml);
+        //儲存檔案
+        myxml.Save(filename);
+    }
 }
