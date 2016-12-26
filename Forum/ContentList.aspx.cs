@@ -11,5 +11,6 @@ public partial class ContentList : System.Web.UI.Page
     {
         //設定DataList的資料原始檔案
         XmlDataSource1.DataFile = Request.QueryString["filename"] + "file.xml";
+        HyperLink1.NavigateUrl = "backmsg.aspx?infoid" + Request.QueryString["filename"];
     }
 }

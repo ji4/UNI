@@ -11,6 +11,9 @@
     <form id="form1" runat="server">
     <div>
     
+        <asp:HyperLink ID="HyperLink1" runat="server">回覆主題</asp:HyperLink>
+        <br />
+    
         <asp:DataList ID="DataList1" runat="server" DataSourceID="XmlDataSource1" Width="465px">
         <HeaderTemplate><b>文帖詳細內容</b><table></HeaderTemplate>
             <ItemTemplate><tr><td>主題 : <b><%#XPath("title")%></b></td>
