@@ -85,4 +85,19 @@ public class BBSManager
         //返回ID+1
         return count + 1;
     }
+
+    public bool UpdateMsg(int infoid)
+    {
+        //建立資料內文物件
+        DataClassesDataContext db = new DataClassesDataContext();
+        //抓取符合條件的記錄
+        BBSInfo info = db.BBSInfo.First(p => p.InfoID == infoid);
+        //回覆數加1
+        info.ReplyCount += 1;
+        //修改回覆日期
+        info.LastReplytime = DateTime.Now.Date;
+        //提交更改
+        db.SubmitChanges();
+        return true;
+    }
 }
