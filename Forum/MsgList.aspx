@@ -11,8 +11,9 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:GridView ID="GridView1" runat="server" DataSourceID="LinqDataSource1" AutoGenerateColumns="False" DataKeyNames="InfoID">
+        <asp:GridView ID="GridView1" runat="server" DataSourceID="LinqDataSource1" AutoGenerateColumns="False" DataKeyNames="InfoID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
+                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="InfoID" HeaderText="InfoID" SortExpression="InfoID" ReadOnly="True" />
                 <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
                 <asp:BoundField DataField="FileName" HeaderText="FileName" SortExpression="FileName" />
