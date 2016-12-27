@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:Login ID="Login1" runat="server" CreateUserText="註冊" CreateUserUrl="~/Register.aspx">
+        <asp:Login ID="Login1" runat="server" CreateUserText="註冊" CreateUserUrl="~/register.aspx">
         </asp:Login>
     
     </div>
